@@ -1,0 +1,10 @@
+docker run -t --rm -p 8501:8501 -v C:/Users/Asha/Documents/AIML/potato-disease-classification:/potato-disease-classification tensorflow/serving --rest_api_port=8501 --model_config_file=/potato-disease-classification/api/models.config
+
+#In windows power shell run this command for tf serving via Docker
+#-v C:/...:/potato-disease-classification maps your local folder into Docker.
+
+#--model_config_file=/potato-disease-classification/api/models.config tells Docker where the model config is.
+
+#Docker will now serve the model at:
+http://localhost:8501/v1/models/potatoes_model:predict
+
